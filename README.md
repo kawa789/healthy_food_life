@@ -1,24 +1,38 @@
-# README
+# Healthy food life
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+様々なユーザの声を聞いて、自分に合う健康食品を知るためのサイト。
 
-Things you may want to cover:
+### サイトテーマ
+健康食品の効果をシェア。
 
-* Ruby version
+### テーマを選んだ理由
+近年、健康に対する意識の高まりから多くの健康食品が開発されています。
+前職はドラッグストアでしたが、自分に合う健康食品が分からないというお客様が多く
+いらっしゃいました。
+そこで実際に効果を実感した人の感想を知ることで自分に合う健康食品を見つける
+きっかけになると思い、このテーマにしました。
 
-* System dependencies
+### ターゲットユーザ
+自分に合った健康食品を知りたい方や、実際に使ってみた人の感想を知りたい方。
 
-* Configuration
+### 主な利用シーン
+健康食品を初めて購入する際、利用者の声を聞きたいとき。
+また、自分が使用した感想や体感した効果を誰かと共有したいときにも活用できます。
 
-* Database creation
+## 設計書
 
-* Database initialization
 
-* How to run the test suite
+## チャレンジ要素一覧
+https://docs.google.com/spreadsheets/d/12GyRc93RpeEMwgQLZuIhiAdL2ticqurRmcir2rWbPA0/edit?usp=sharing
 
-* Services (job queues, cache servers, search engines, etc.)
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
 
-* Deployment instructions
-
-* ...
+## 使用素材
+- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
+- 使用しない場合は、使用素材の項目をREADMEから削除してください。
