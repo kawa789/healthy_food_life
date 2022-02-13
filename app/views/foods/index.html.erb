@@ -1,0 +1,9 @@
+<h1>健康食品一覧</h1>
+<div>
+  <% @foods.each do |food| %>
+  <p>タイトル</p>
+  <span><%= link_to food.title, food_path(food.id) %></span>
+  <p>本文</p>
+  <span><%= food.body %></span>
+  <% end %>
+</div>
