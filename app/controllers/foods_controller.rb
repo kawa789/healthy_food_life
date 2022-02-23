@@ -12,9 +12,12 @@ class FoodsController < ApplicationController
   end
 
   def create
-    food = Food.new(food_params)
-    food.save
-    redirect_to foods_path
+    @food = Food.new(food_params)
+    if @food.save #バリデーションの追加
+      redirect_to foods_path
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -39,4 +42,3 @@ class FoodsController < ApplicationController
   end
 
 end
-
