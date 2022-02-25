@@ -7,3 +7,25 @@
 <%= link_to "削除", food_path(@food), method: :delete %>
 <%= link_to "一覧に戻る", foods_path %>
 
+<table>
+<% @food.food_comments.each do |food_comment| %>
+  <% food_comment_user = food_comment.user %>
+  <tr>
+  	<td>
+  		<%= link_to user_path(food_comment_user), class: "user_#{food_comment_user.id}" do %>
+    		<%#= attachment_image_tag food_comment_user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg", size: "50x50" %><br>
+    		<%= food_comment_user.name %>
+  		<% end %>
+  	</td>
+  	<td><%= food_comment.comment %></td>
+  	<% if current_user == food_comment_user %>
+    	<td><%= link_to 'Destroy', food_food_comment_path(food_comment.food_id, food_comment.id), class: 'btn-sm btn-danger', method: :delete, remote: true %></td>
+  	<% end %>
+  </tr>
+<% end %>
+</table>
+
+<%= form_with model:[@food,@food_comment] do |f| %>
+ <%= f.text_area :comment %>
+ <%= f.submit '送信'%>
+<% end %>
