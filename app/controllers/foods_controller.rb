@@ -41,5 +41,4 @@ class FoodsController < ApplicationController
   def food_params
     params.require(:food).permit(:title, :body)
   end
-
 end
