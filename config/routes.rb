@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :foods do
     resources :food_comments, only: [:create, :destroy]
   end
-  
+
   resources :users
+
 end
