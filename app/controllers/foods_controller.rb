@@ -42,3 +42,4 @@ class FoodsController < ApplicationController
     params.require(:food).permit(:title, :body)
   end
 end
+
