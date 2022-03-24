@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @food_new = Food.new
-    @foods = @user.foods
+    @foods = Food.all
   end
 
   def edit
