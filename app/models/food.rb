@@ -1,5 +1,5 @@
 class Food < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true #投稿時にuserのnillを許可
   validates :title, presence: true
   validates :body, presence: true
 

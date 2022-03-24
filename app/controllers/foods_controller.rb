@@ -1,12 +1,16 @@
 class FoodsController < ApplicationController
   def index
     @foods = Food.all
+    @food = Food.new
     @user = current_user
   end
 
   def show
     @food = Food.find(params[:id])
+     @food_new = Food.new
     @food_comment = FoodComment.new
+    @user = current_user
+
   end
 
   def new

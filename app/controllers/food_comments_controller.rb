@@ -6,7 +6,7 @@ class FoodCommentsController < ApplicationController
     @food_comment.user_id = current_user.id
     @food_comment.food_id = @food.id
     @food_comment.save
-    redirect_to food_path(food)
+    redirect_to food_path(params[:food_id])
 
   end
 
