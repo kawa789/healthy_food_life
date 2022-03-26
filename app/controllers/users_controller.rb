@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   def index
     @users = User.all
@@ -8,7 +9,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @food_new = Food.new
-    @foods = Food.all
+    @foods = @user.foods
   end
 
   def edit
@@ -28,4 +29,12 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :profile_image, :introduction)
   end
+
+  def ensure_correct_user
+    @user = User.find(params[:id])
+    unless @user == current_user
+      redirect_to user_path(current_user)
+    end
+  end
+
 end

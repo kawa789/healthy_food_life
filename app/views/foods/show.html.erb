@@ -14,7 +14,7 @@
         <table class="table">
           <tbody>
             <tr>
-              <td><%= attachment_image_tag @food.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
+              <td><%= attachment_image_tag @food.user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg", size: "50x50" %>
               <br><%= link_to user_path(@user) do %><%= @user.name %><% end %>
               </td>
               <td><%= link_to food_path do %>
@@ -23,26 +23,31 @@
               </td>
               <td><%= @food.body %></td>
 
-              <% if @food.user == current_user %>
+              <%# if @food.user == current_user %>
+              <% if current_user == @food.user %>
               <td>
                 <%=link_to "Edit",edit_food_path(@food.id), class: "btn btn-sm btn-success" %>
               </td>
               <td>
                 <%=link_to "Destroy",food_path(@food.id), class:"btn btn-sm btn-danger", method: :delete, "data-confirm" => "本当に消しますか?" %>
               </td>
+              <% else %>
+      　　　　　　　<td></td>
+      　　　　　　　<td></td>
               <% end %>
 
             </tr>
           </tbody>
         </table>
 
+        <h2>Comment</h2>
         <table>
         <% @food.food_comments.each do |food_comment| %>
         <% food_comment_user = food_comment.user %>
         <tr>
   	    <td>
   		<%= link_to user_path(food_comment_user), class: "user_#{food_comment_user.id}" do %>
-    		<%#= attachment_image_tag food_comment_user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg", size: "50x50" %><br>
+    		<%= attachment_image_tag food_comment_user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg", size: "50x50" %><br>
     		<%= food_comment_user.name %>
   		<% end %>
   	    </td>
@@ -56,7 +61,7 @@
 
         <%= form_with model:[@food,@food_comment] do |f| %>
          <%= f.text_area :comment %>
-         <%= f.submit '送信'%>
+         <%= f.submit '送信', class: 'btn btn-primary' %>
         <% end %>
 
       </div>
@@ -66,7 +71,7 @@
 
 
 
-<h1>詳細画面</h1>
+<h1>あとで削除</h1>
 <h2>タイトル</h2>
 <p><%= @food.title %></p>
 <h2>本文</h2>
