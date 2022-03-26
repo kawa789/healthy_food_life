@@ -22,6 +22,7 @@ class FoodsController < ApplicationController
 
   def create
     @food = Food.new(food_params)
+    @food.user_id = current_user.id #どのユーザーが投稿したのか紐付け
     if @food.save #バリデーションの追加
       redirect_to foods_path
     else
