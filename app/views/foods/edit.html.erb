@@ -1,8 +1,19 @@
-<h1>編集画面</h1>
-<%= form_with model:@food, local: true do |f| %>
-  <h4>タイトル</h4>
-  <%= f.text_field :title %>
-  <h4>本文</h4>
-  <%= f.text_area :body %>
-  <%= f.submit '保存' %>
-<% end %>
+<div class="container">
+  <div class="row">
+   <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+
+  		<h1>Editing Food</h1>
+
+  		<%= form_with model:@food, local:true do |f| %>
+      <h4>Title</h4>
+      <%= f.text_field :title,class:"col-xs-12" %>
+      <h4>Body</h4>
+       <%= f.text_area :body,class:"col-xs-12" %>
+      <%= f.submit "保存" %>
+      <% end %>
+  		<%= link_to "Show",food_path(@food.id)%> |
+  		<%= link_to "Back",foods_path %>
+
+   </div>
+  </div>
+ </div>

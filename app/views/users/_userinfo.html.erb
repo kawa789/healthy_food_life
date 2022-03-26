@@ -1,5 +1,5 @@
 <h2>ユーザー情報</h2>
-  <%= attachment_image_tag current_user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+  <%= attachment_image_tag current_user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg", size: "50x50" %>
 <table class="table">
  <tbody>
   <tr></tr>
@@ -16,5 +16,5 @@
 </table>
 
 <div class="row">
-  <p><%= link_to "プロフィール編集", edit_user_path(current_user.id), class: "btn btn-outline-secondary btn-block fas fa-user-cog" %></p>
+  <p><%= link_to "プロフィール編集", edit_user_path(current_user.id), class: 'btn btn-success' %></p>
 </div>

@@ -1,4 +1,7 @@
 class FoodsController < ApplicationController
+  before_action :authenticate_user! #ユーザーがログインしているかどうか確認
+  before_action :ensure_user, only: [:edit, :update, :destroy] #投稿したユーザーのみ編集、削除可能
+
   def index
     @foods = Food.all
     @food = Food.new
@@ -46,4 +49,11 @@ class FoodsController < ApplicationController
   def food_params
     params.require(:food).permit(:title, :body)
   end
+
+  def ensure_user
+    @foods = current_user.foods
+    @food = @foods.find_by(id: params[:id])
+    redirect_to foods_path unless @food
+  end
+
 end
