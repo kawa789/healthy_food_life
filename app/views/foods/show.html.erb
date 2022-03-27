@@ -68,14 +68,3 @@
 
     </div>
   </div>
-
-
-
-<h1>あとで削除</h1>
-<h2>タイトル</h2>
-<p><%= @food.title %></p>
-<h2>本文</h2>
-<p><%= @food.body %></p>
-<%= link_to "編集", edit_food_path(@food) %>
-<%= link_to "削除", food_path(@food), method: :delete %>
-<%= link_to "一覧に戻る", foods_path %>
