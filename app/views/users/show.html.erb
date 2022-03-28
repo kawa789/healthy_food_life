@@ -37,6 +37,8 @@
               <td>
                 <p><%= food.body %></p>
               </td>
+              <td class="favorite-btn"><%= render "favorites/favorite-btn", food: food %></td>
+              <td>コメント数: <%= food.food_comments.count %></td>
             </tr>
             <% end %>
           </tbody>

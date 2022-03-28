@@ -22,8 +22,8 @@
                   <% end %>
               </td>
               <td><%= @food.body %></td>
-
-              <%# if @food.user == current_user %>
+              <td class="favorite-btn"><%= render "favorites/favorite-btn", food: @food %></td>
+              <td>コメント数: <%= @food.food_comments.count %></td>
               <% if current_user == @food.user %>
               <td>
                 <%=link_to "Edit",edit_food_path(@food.id), class: "btn btn-sm btn-success" %>
