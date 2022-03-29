@@ -23,6 +23,11 @@
 また、自分が使用した感想や体感した効果を誰かと共有したいときにも活用できます。
 
 ## 設計書
+- テーブル定義書
+　https://docs.google.com/spreadsheets/d/1dB-n-kx0zhcPc05-OtTAFmb8TKlnZBLLO7LmTdE_jqY/edit?usp=sharing
+- ER図
+　https://drive.google.com/file/d/1A0mLjq2wF9NS_xAGMQHAcE35EXDIXBzm/view?usp=sharing
+
 
 
 ## チャレンジ要素一覧
@@ -34,8 +39,3 @@ https://docs.google.com/spreadsheets/d/12GyRc93RpeEMwgQLZuIhiAdL2ticqurRmcir2rWb
 - フレームワーク：Ruby on Rails
 - JSライブラリ：jQuery
 - IDE：Cloud9
-
-## 使用素材
-- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
-- 使用しない場合は、使用素材の項目をREADMEから削除してください。
--
