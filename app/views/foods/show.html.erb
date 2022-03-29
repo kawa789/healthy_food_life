@@ -10,17 +10,14 @@
       </div>
 
       <div class="col-md-8 offset-md-1">
-        <h2>Healthy Food detail</h2>
+        <h1>Healthy Food detail</h1>
         <table class="table">
           <tbody>
             <tr>
               <td><%= attachment_image_tag @food.user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg", size: "50x50" %>
               <br><%= link_to user_path(@user) do %><%= @user.name %><% end %>
               </td>
-              <td><%= link_to food_path do %>
-                  <p><%= @food.title %></p>
-                  <% end %>
-              </td>
+              <td><%= link_to @food.title, food_path(@food) %></td>
               <td><%= @food.body %></td>
               <td class="favorite-btn"><%= render "favorites/favorite-btn", food: @food %></td>
               <td>コメント数: <%= @food.food_comments.count %></td>

@@ -37,6 +37,13 @@
      </header>
 
     <main>
+
+      <% if flash[:notice] %> <!--サクセス・エラーメッセージの表示-->
+        <div class="flash">
+          <%= flash[:notice] %>
+        </div>
+       <% end %>
+
       <%= yield %>
     </main>
 

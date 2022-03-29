@@ -24,9 +24,11 @@ class FoodsController < ApplicationController
     @food = Food.new(food_params)
     @food.user_id = current_user.id #どのユーザーが投稿したのか紐付け
     if @food.save #バリデーションの追加
+       flash[:notice] = '投稿が完了しました！'
       redirect_to foods_path
     else
-      render :new
+      @foods = Food.all
+      render :index
     end
   end
 
@@ -42,8 +44,12 @@ class FoodsController < ApplicationController
 
   def update
     food = Food.find(params[:id])
-    food.update(food_params)
+    if food.update(food_params)
+    flash[:notice] = '更新が完了しました！'
     redirect_to foods_path(food)
+    else
+      render :edit
+    end
   end
 
   private
