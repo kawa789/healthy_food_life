@@ -6,9 +6,9 @@
 
   		<%= form_with model:@food, local:true do |f| %>
       <h4>タイトル</h4>
-      <%= f.text_field :title,class:"col-xs-12" %>
+      <%= f.text_field :title %>
       <h4>本文</h4>
-       <%= f.text_area :body,class:"col-xs-12" %>
+       <%= f.text_area :body %>
       <%= f.submit "保存" %>
       <% end %>
 
